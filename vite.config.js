@@ -6,8 +6,7 @@ import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 // https://vite.dev/config/
 export default defineConfig({
 	define: {
-		VITE_APP_URL: process.env.VITE_VERCEL_URL,
-		VITE_PROD_URL: process.env.VITE_VERCEL_PROJECT_PRODUCTION_URL,
+		VITE_APP_URL: JSON.stringify(process.env.VITE_VERCEL_TWITCH_CLIENT_ID),
 	},
 	plugins: [
 		TanStackRouterVite({ target: "react", autoCodeSplitting: true }),

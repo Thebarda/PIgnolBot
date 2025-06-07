@@ -8,27 +8,25 @@ const MouVotes = (): ReactElement | null => {
 
 	const totalVotes = mouVotes.pi + mouVotes.sona + mouVotes.moumi;
 
-	if (totalVotes === 0) {
-		return null;
-	}
-
 	return (
 		<div className="w-full mt-3 flex justify-center">
 			<div className="w-1/2">
-				<div className="w-full flex flex-row mb-2 h-3">
-					<div
-						style={{ width: `${(mouVotes.pi / totalVotes) * 100}%` }}
-						className="h-full bg-sky-400 transition-all rounded-s-sm"
-					/>
-					<div
-						style={{ width: `${(mouVotes.sona / totalVotes) * 100}%` }}
-						className="h-full bg-white transition-all"
-					/>
-					<div
-						style={{ width: `${(mouVotes.moumi / totalVotes) * 100}%` }}
-						className="h-full bg-amber-500 transition-all rounded-e-sm"
-					/>
-				</div>
+				{totalVotes > 0 && (
+					<div className="w-full flex flex-row mb-2 h-3">
+						<div
+							style={{ width: `${(mouVotes.pi / totalVotes) * 100}%` }}
+							className="h-full bg-sky-400 transition-all rounded-s-sm"
+						/>
+						<div
+							style={{ width: `${(mouVotes.sona / totalVotes) * 100}%` }}
+							className="h-full bg-white transition-all"
+						/>
+						<div
+							style={{ width: `${(mouVotes.moumi / totalVotes) * 100}%` }}
+							className="h-full bg-amber-500 transition-all rounded-e-sm"
+						/>
+					</div>
+				)}
 				<div className="flex flex-row gap-6">
 					<Legend
 						name="pi"

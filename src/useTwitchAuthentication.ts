@@ -42,8 +42,7 @@ const useTwitchChat = () => {
 		return !isNil(urlParams.get("access_token"));
 	};
 
-	const clientId =
-		process.env.TWITCH_CLIENT_ID || import.meta.env.TWITCH_CLIENT_ID;
+	const clientId = import.meta.env.VITE_TWITCH_CLIENT_ID;
 
 	useEffect(() => {
 		if (initializeToken()) {

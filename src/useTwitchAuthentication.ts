@@ -41,7 +41,12 @@ const useTwitchChat = () => {
 
 		return !isNil(urlParams.get("access_token"));
 	};
-	console.log(process.env, import.meta);
+
+	console.log(import.meta.env.VITE_APP_URL);
+	console.log(import.meta.env.VITE_PROD_URL);
+
+	console.log(import.meta.env.VITE_VERCEL_URL);
+	console.log(import.meta.env.VITE_VERCEL_PROJECT_PRODUCTION_URL);
 
 	useEffect(() => {
 		if (initializeToken()) {

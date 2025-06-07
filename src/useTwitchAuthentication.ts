@@ -41,6 +41,11 @@ const useTwitchChat = () => {
 
 		return !isNil(urlParams.get("access_token"));
 	};
+	console.log(
+		process.env.VERCEL_TWITCH_CLIENT_ID,
+		process.env.TWITCH_CLIENT_ID,
+		import.meta.env.TWITCH_CLIENT_ID,
+	);
 
 	useEffect(() => {
 		if (initializeToken()) {

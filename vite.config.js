@@ -7,6 +7,7 @@ import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 export default defineConfig({
 	define: {
 		TWITCH_CLIENT_ID: process.env.VERCEL_TWITCH_CLIENT_ID,
+		__APP_ENV__: process.env.VITE_VERCEL_ENV,
 	},
 	plugins: [
 		TanStackRouterVite({ target: "react", autoCodeSplitting: true }),

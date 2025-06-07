@@ -44,6 +44,7 @@ const useTwitchChat = () => {
 
 	console.log(import.meta);
 	console.log(import.meta.env);
+	console.log(process.env);
 
 	// useEffect(() => {
 	// 	if (initializeToken()) {

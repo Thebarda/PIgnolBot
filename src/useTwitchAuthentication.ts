@@ -42,20 +42,21 @@ const useTwitchChat = () => {
 		return !isNil(urlParams.get("access_token"));
 	};
 
-	console.log(process.env.TWITCH_CLIENT_ID);
+	const clientId =
+		process.env.TWITCH_CLIENT_ID || import.meta.env.TWITCH_CLIENT_ID;
 
-	// useEffect(() => {
-	// 	if (initializeToken()) {
-	// 		return;
-	// 	}
-	//
-	// 	window.location.href = `https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=${import.meta.env.TWITCH_CLIENT_ID}&redirect_uri=${window.location.href}&scope=chat:read+chat:edit+user:read:email+user:read:follows`;
-	//
-	// 	return () => {
-	// 		clearInterval(intervalRef.current);
-	// 	};
-	// }, []);
-	//
+	useEffect(() => {
+		if (initializeToken()) {
+			return;
+		}
+
+		window.location.href = `https://id.twitch.tv/oauth2/authorize?response_type=token&client_id=${clientId}&redirect_uri=${window.location.href}&scope=chat:read+chat:edit+user:read:email+user:read:follows`;
+
+		return () => {
+			clearInterval(intervalRef.current);
+		};
+	}, []);
+
 	if (isNil(data)) {
 		return;
 	}

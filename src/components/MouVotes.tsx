@@ -27,7 +27,7 @@ const MouVotes = (): ReactElement | null => {
 						/>
 					</div>
 				)}
-				<div className="flex flex-row gap-6">
+				<div className="flex flex-row gap-6 justify-center">
 					<Legend
 						name="pi"
 						vote={mouVotes.pi}

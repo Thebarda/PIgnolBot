@@ -1,0 +1,26 @@
+name: test-workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      first_name:
+        description: "Your first name"
+        required: true
+        default: ""
+        type: string
+      last_name:
+        description: "Your last name"
+        required: true
+        default: ""
+        type: string
+      is_minor:
+        type: boolean
+        default: true
+        required: true
+
+jobs:
+  print:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Print everything
+        run: echo "${{inputs.first_name}} ${{inputs.last_name}}"

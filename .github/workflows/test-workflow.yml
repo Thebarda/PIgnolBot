@@ -17,10 +17,17 @@ on:
         type: boolean
         default: true
         required: true
+      branch:
+        type: string
+        required: true
+        default: ""
 
 jobs:
   print:
     runs-on: ubuntu-24.04
     steps:
       - name: Print everything
-        run: echo "${{inputs.first_name}} ${{inputs.last_name}}"
+        run: |
+          echo "First name => ${{inputs.first_name}}"
+          echo "Last name => ${{inputs.last_name}}"
+          echo "Branch => ${{inputs.branch}}"

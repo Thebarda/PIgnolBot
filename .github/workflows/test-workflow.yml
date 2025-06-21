@@ -36,4 +36,4 @@ jobs:
           echo "Last name => ${{inputs.last_name}}"
           echo "Branch => ${{inputs.branch}}"
           echo "Country => ${{inputs.country}}"
-          echo "Is confirmed? => ${{inputs.confirm}}
+          echo "Is confirmed? => ${{inputs.confirm}}"

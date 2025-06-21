@@ -1,0 +1,29 @@
+name: deploy-stack
+
+on:
+  workflow_dispatch:
+    inputs:
+      include_next:
+        description: "Should include Next"
+        required: true
+        default: false
+        type: boolean
+      include_db:
+        description: "Should include db"
+        required: true
+        default: false
+        type: boolean
+      number_of_instances:
+        type: string
+        default: "1"
+        required: true
+
+jobs:
+  print:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Print everything
+        run: |
+          echo "Include Next => ${{inputs.include_next}}"
+          echo "Include DB => ${{inputs.include_db}}"
+          echo "Number of instances => ${{inputs.number_of_instances}}"

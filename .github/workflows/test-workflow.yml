@@ -13,9 +13,13 @@ on:
         required: true
         default: ""
         type: string
-      is_minor:
+      confirm:
         type: boolean
-        default: true
+        default: false
+        required: true
+      country:
+        type: string
+        default: France
         required: true
       branch:
         type: string
@@ -31,3 +35,5 @@ jobs:
           echo "First name => ${{inputs.first_name}}"
           echo "Last name => ${{inputs.last_name}}"
           echo "Branch => ${{inputs.branch}}"
+          echo "Country => ${{inputs.country}}"
+          echo "Is confirmed? => ${{inputs.confirm}}
